@@ -3,8 +3,6 @@
 import * as React from "react";
 
 import StarterKit from "@tiptap/starter-kit";
-import { Link } from "./extensions/link";
-import { Highlight } from "./extensions/highlight";
 import { EditorBubbleMenu } from "./bubble-menu";
 import "@/styles/editor.css";
 import { EditorContent } from "./editor-content";
@@ -13,12 +11,18 @@ import { LinkBubbleMenu } from "./link-bubble-menu";
 import { textareaVariants } from "../ui/textarea";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "../ui/skeleton";
-import { Strike } from "./extensions/strike";
-import { Heading } from "./extensions/heading";
-import { Paragraph } from "./extensions/paragraph";
+import {
+  Strike,
+  Heading,
+  Bold,
+  BulletList,
+  Highlight,
+  Italic,
+  Link,
+  Paragraph,
+} from "./extensions";
 import { EditorHTML } from "./editor-html";
-import { Bold } from "./extensions/bold";
-import { Italic } from "./extensions/italic";
+import { EditorFloatingMenu } from "./floating-menu";
 
 // define your extensions right here
 const extensions = [
@@ -30,6 +34,7 @@ const extensions = [
   Paragraph,
   Bold,
   Italic,
+  BulletList,
 ];
 
 const content = `<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://scape76.com"><strong>Hello World!</strong></a></p><p><mark data-color="#a29797" style="background-color: #a29797; color: inherit">highlighting is fun!</mark></p><p><strong>some old bold style</strong></p><p><s>strikethough</s></p>`;
@@ -47,7 +52,6 @@ export function Editor({ onMount }: EditorProps) {
     <>
       <EditorProvider content={content} extensions={extensions}>
         <EditorContent />
-        {/* {withFloatingMenu && <EditorFloatingMenu />} */}
         <EditorBubbleMenu />
         <LinkBubbleMenu />
         <EditorHTML />

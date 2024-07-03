@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { HexColorPicker } from "react-colorful";
 
 import { Icons } from "@/components/icons";
@@ -10,7 +10,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+
+import { debounce } from "lodash";
 
 export function HighlightToggle() {
   const [open, setOpen] = useState(false);
@@ -19,8 +22,17 @@ export function HighlightToggle() {
 
   const isActive = editor.isActive("highlight");
 
+  const onColorChange = useCallback(
+    (color: string) => {
+      editor.storage.highlight.color = color;
+      editor.chain().focus().setHighlight({ color }).run();
+      setColor(color);
+    },
+    [editor]
+  );
+
   return (
-    <div className="flex gap-2">
+    <div className="flex">
       <Toggle
         size={"sm"}
         pressed={isActive}
@@ -32,23 +44,29 @@ export function HighlightToggle() {
           }
         }}
       >
-        <Icons.highlight className="size-4" />
+        <Icons.highlight className="size-4" highlightColor={color} />
       </Toggle>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger
-          className={cn(toggleVariants({ size: "sm" }), "px-4")}
-          style={{ background: color }}
-        ></PopoverTrigger>
-        <PopoverContent className="w-auto">
-          <HexColorPicker
-            color={color}
-            onChange={(color) => {
-              editor.storage.highlight.color = color;
-              setColor(color);
-            }}
-          ></HexColorPicker>
+        <PopoverTrigger asChild>
+          <Button variant={"ghost"} className="h-8 px-0.5">
+            <ChevronDown className="size-3" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto" align="start" side="top">
+          <ColorPicker color={color} onChange={onColorChange} />
         </PopoverContent>
       </Popover>
     </div>
   );
 }
+
+const ColorPicker = memo(
+  ({ color, onChange }: { color: string; onChange: (c: string) => void }) => {
+    return (
+      <HexColorPicker
+        color={color}
+        onChange={debounce(onChange, 200)}
+      ></HexColorPicker>
+    );
+  }
+);

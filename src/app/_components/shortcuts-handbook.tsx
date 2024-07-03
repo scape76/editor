@@ -60,6 +60,12 @@ export function ShortcutsHandbook() {
             </Shortcut>{" "}
             to apply paragraph node
           </div>
+          <div>
+            <Shortcut>
+              {shortcutToKbd(editorConfig.shortcuts.bulletList)}
+            </Shortcut>{" "}
+            to apply bullet list node
+          </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

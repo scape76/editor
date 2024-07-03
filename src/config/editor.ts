@@ -9,5 +9,6 @@ export const editorConfig = {
     strike: "Mod-s",
     italic: "Mod-i",
     bold: "Mod-b",
+    bulletList: "Mod-shift-b",
   },
 };

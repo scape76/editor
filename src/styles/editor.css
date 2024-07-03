@@ -23,3 +23,7 @@
 .tiptap a {
   @apply text-blue-400;
 }
+
+.tiptap ul {
+  @apply list-disc pl-2;
+}

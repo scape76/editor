@@ -15,42 +15,55 @@ export const nodesMenuItems = {
   paragraph: {
     title: "Paragraph",
     icon: Icons.paragraph,
+    onClick: (editor: Editor) => editor.chain().focus().setParagraph().run(),
+    isActive: (editor: Editor) => editor.isActive("paragraph"),
   },
   h1: {
     title: "Heading 1",
     icon: Icons.h1,
+    onClick: (editor: Editor) =>
+      editor.chain().focus().toggleHeading({ level: 1 }).run(),
+    isActive: (editor: Editor) => editor.isActive("heading", { level: 1 }),
   },
   h2: {
     title: "Heading 2",
     icon: Icons.h2,
+    onClick: (editor: Editor) =>
+      editor.chain().focus().toggleHeading({ level: 2 }).run(),
+    isActive: (editor: Editor) => editor.isActive("heading", { level: 2 }),
   },
   h3: {
     title: "Heading 3",
     icon: Icons.h3,
+    onClick: (editor: Editor) =>
+      editor.chain().focus().toggleHeading({ level: 3 }).run(),
+    isActive: (editor: Editor) => editor.isActive("heading", { level: 3 }),
   },
   h4: {
     title: "Heading 4",
     icon: Icons.h4,
+    onClick: (editor: Editor) =>
+      editor.chain().focus().toggleHeading({ level: 4 }).run(),
+    isActive: (editor: Editor) => editor.isActive("heading", { level: 4 }),
+  },
+  bulletList: {
+    title: "Bullet list",
+    icon: Icons.ul,
+    onClick: (editor: Editor) =>
+      editor.chain().focus().toggleBulletList().run(),
+    isActive: (editor: Editor) => editor.isActive("bulletList"),
   },
 };
 
-const getCurrentNodePresentation = (editor: Editor) => {
-  if (editor.isActive("heading", { level: 1 })) return nodesMenuItems["h1"];
-  else if (editor.isActive("heading", { level: 2 }))
-    return nodesMenuItems["h2"];
-  else if (editor.isActive("heading", { level: 3 }))
-    return nodesMenuItems["h3"];
-  else if (editor.isActive("heading", { level: 4 }))
-    return nodesMenuItems["h4"];
-  return nodesMenuItems["paragraph"];
-};
+const nodeItems = Object.values(nodesMenuItems);
 
 export function NodesMenuPopover() {
   const { editor } = useCurrentEditor();
 
   if (!editor) return null;
 
-  const { title, icon: Icon } = getCurrentNodePresentation(editor);
+  const { title, icon: Icon } =
+    nodeItems.find((item) => item.isActive(editor)) ?? nodeItems[0];
 
   return (
     <Popover>
@@ -63,49 +76,15 @@ export function NodesMenuPopover() {
       </PopoverTrigger>
       <PopoverContent className="!w-[150px]" variant={"toolbar"}>
         <div className="grid gap-1 w-full">
-          <NodeButton
-            onClick={() => editor.chain().focus().setParagraph().run()}
-            active={editor.isActive("paragraph")}
-          >
-            <Icons.paragraph className="size-4 mr-2" />
-            Paragraph
-          </NodeButton>
-          <NodeButton
-            onClick={() =>
-              editor.chain().focus().toggleHeading({ level: 1 }).run()
-            }
-            active={editor.isActive("heading", { level: 1 })}
-          >
-            <Icons.h1 className="size-4 mr-2" />
-            Heading 1
-          </NodeButton>
-          <NodeButton
-            onClick={() =>
-              editor.chain().focus().toggleHeading({ level: 2 }).run()
-            }
-            active={editor.isActive("heading", { level: 2 })}
-          >
-            <Icons.h2 className="size-4 mr-2" />
-            Heading 2
-          </NodeButton>
-          <NodeButton
-            onClick={() =>
-              editor.chain().focus().toggleHeading({ level: 3 }).run()
-            }
-            active={editor.isActive("heading", { level: 3 })}
-          >
-            <Icons.h3 className="size-4 mr-2" />
-            Heading 3
-          </NodeButton>
-          <NodeButton
-            onClick={() =>
-              editor.chain().focus().toggleHeading({ level: 4 }).run()
-            }
-            active={editor.isActive("heading", { level: 4 })}
-          >
-            <Icons.h4 className="size-4 mr-2" />
-            Heading 4
-          </NodeButton>
+          {nodeItems.map(({ title, onClick, isActive, icon: Icon }) => (
+            <NodeButton
+              onClick={() => onClick(editor)}
+              active={isActive(editor)}
+            >
+              <Icon className="size-4 mr-2" />
+              {title}
+            </NodeButton>
+          ))}
         </div>
       </PopoverContent>
     </Popover>
