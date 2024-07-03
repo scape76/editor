@@ -20,6 +20,7 @@ import {
   Italic,
   Link,
   Paragraph,
+  Image,
 } from "./extensions";
 import { EditorHTML } from "./editor-html";
 import { EditorFloatingMenu } from "./floating-menu";
@@ -36,6 +37,7 @@ const extensions = [
   Bold,
   Italic,
   BulletList,
+  Image,
 ];
 
 const content = `<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://scape76.com"><strong>Hello World!</strong></a></p><p><mark data-color="#a29797" style="background-color: #a29797; color: inherit">highlighting is fun!</mark></p><p><strong>some old bold style</strong></p><p><s>strikethough</s></p>`;

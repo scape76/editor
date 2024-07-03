@@ -67,7 +67,9 @@ export function ImageUploadDialog() {
         <FileUploader
           maxFiles={1}
           maxSize={1 * 1024 * 1024}
-          onValueChange={(files) => onUpload(files)}
+          onValueChange={(files) => {
+            onUpload(files as unknown as FileList | null);
+          }}
         />
       </DialogContent>
     </Dialog>
