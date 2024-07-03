@@ -22,7 +22,6 @@ export function ImageUploadDialog() {
 
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      console.log(e.key === "i", e.shiftKey, e.metaKey || e.ctrlKey);
       if (
         (e.key === "i" || e.key === "I") &&
         e.shiftKey &&

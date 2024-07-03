@@ -38,7 +38,6 @@ export function ResizableImage({
   const { src, textAlign, width: widthProps } = node.attrs;
 
   const isEditable = editor.isEditable;
-  console.log({ isEditable });
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const [isResizing, setIsResizing] = useState(false);

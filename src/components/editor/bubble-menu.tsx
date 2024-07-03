@@ -1,4 +1,4 @@
-import { BubbleMenu, BubbleMenuProps } from "@tiptap/react";
+import { BubbleMenu, BubbleMenuProps, isTextSelection } from "@tiptap/react";
 import { useCurrentEditor } from "@/context/editor-context";
 import {
   Popover,
@@ -29,14 +29,34 @@ export function EditorBubbleMenu({
 
   return (
     <BubbleMenu
-      pluginKey={"my-bubble-menu"}
       editor={editor}
-      {...props}
+      shouldShow={({ view, state, from, to, editor }) => {
+        const { doc, selection } = state;
+        const { empty } = selection;
+
+        const isEmptyTextBlock =
+          !doc.textBetween(from, to).length && isTextSelection(state.selection);
+
+        const hasEditorFocus = view.hasFocus();
+
+        if (
+          !hasEditorFocus ||
+          empty ||
+          isEmptyTextBlock ||
+          !editor.isEditable ||
+          editor.isActive("image")
+        ) {
+          return false;
+        }
+
+        return true;
+      }}
       className={cn(
         popoverVariants({ variant: "toolbar" }),
         "flex items-center gap-1 !max-w-auto !w-auto"
       )}
       tippyOptions={{ maxWidth: "auto" }}
+      {...props}
     >
       <NodesMenuPopover />
       <Separator orientation="vertical" className="h-8" />

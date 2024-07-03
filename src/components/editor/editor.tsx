@@ -42,7 +42,7 @@ const extensions = [
   BubbleMenu,
 ];
 
-const content = `<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://scape76.com"><strong>Hello World!</strong></a></p><p><mark data-color="#a29797" style="background-color: #a29797; color: inherit">highlighting is fun!</mark></p><p><strong>some old bold style</strong></p><p><s>strikethough</s></p>`;
+const content = `<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://scape76.com"><strong>Hello World!</strong></a></p><p><mark data-color="#a29797" style="background-color: #a29797; color: inherit">highlighting is fun!</mark></p><p><strong>some old bold style</strong></p><p><s>strikethough</s></p><img src="blob:http://localhost:3003/37cd96bd-5e49-4711-80d7-18655234dbcf" width="152">`;
 
 export interface EditorProps {
   onMount: () => void;
