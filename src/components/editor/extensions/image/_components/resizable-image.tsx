@@ -1,3 +1,5 @@
+// taken from https://github.com/ndtrung341/next-tiptap/blob/main/src/components/editor/components/resize-image.tsx
+
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { Node as ProseMirrorNode } from "@tiptap/pm/model";
 import { NodeViewProps, NodeViewWrapper } from "@tiptap/react";

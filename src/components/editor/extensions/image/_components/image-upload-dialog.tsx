@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+// taken from https://github.com/sadmann7/file-uploader
+
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,16 +12,22 @@ import {
 } from "@/components/ui/dialog";
 import { FileUploader } from "@/components/file-uploader";
 import { Icons } from "@/components/icons";
+import { useCurrentEditor } from "@/context/editor-context";
 
 export function ImageUploadDialog() {
+  const { editor } = useCurrentEditor();
+
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
 
   useEffect(() => {
-    console.log("in here!");
     const listener = (e: KeyboardEvent) => {
-      console.log(e.key);
-      if (e.key === "i" && e.ctrlKey && e.shiftKey) {
+      console.log(e.key === "i", e.shiftKey, e.metaKey || e.ctrlKey);
+      if (
+        (e.key === "i" || e.key === "I") &&
+        e.shiftKey &&
+        (e.metaKey || e.ctrlKey)
+      ) {
         setOpen((prev) => !prev);
       }
     };
@@ -31,8 +39,19 @@ export function ImageUploadDialog() {
     };
   }, []);
 
+  const onUpload = useCallback(
+    (files: FileList | null) => {
+      const file = files?.[0];
+      if (file?.type.startsWith("image/")) {
+        const url = URL.createObjectURL(file);
+        editor.chain().setImage({ src: url }).focus().run();
+      }
+    },
+    [editor]
+  );
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="ghost" size={"xs"}>
           <Icons.image className="size-4" />
@@ -46,9 +65,9 @@ export function ImageUploadDialog() {
           </DialogDescription>
         </DialogHeader>
         <FileUploader
-          maxFiles={8}
-          maxSize={8 * 1024 * 1024}
-          onValueChange={setFiles}
+          maxFiles={1}
+          maxSize={1 * 1024 * 1024}
+          onValueChange={(files) => onUpload(files)}
         />
       </DialogContent>
     </Dialog>
