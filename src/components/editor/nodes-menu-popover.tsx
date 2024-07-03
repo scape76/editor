@@ -76,10 +76,11 @@ export function NodesMenuPopover() {
       </PopoverTrigger>
       <PopoverContent className="!w-[150px]" variant={"toolbar"}>
         <div className="grid gap-1 w-full">
-          {nodeItems.map(({ title, onClick, isActive, icon: Icon }) => (
+          {nodeItems.map(({ title, onClick, isActive, icon: Icon }, i) => (
             <NodeButton
               onClick={() => onClick(editor)}
               active={isActive(editor)}
+              key={i}
             >
               <Icon className="size-4 mr-2" />
               {title}

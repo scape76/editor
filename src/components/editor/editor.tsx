@@ -23,6 +23,7 @@ import {
 } from "./extensions";
 import { EditorHTML } from "./editor-html";
 import { EditorFloatingMenu } from "./floating-menu";
+import { ImageUploadDialog } from "./extensions/image/_components/image-upload-dialog";
 
 // define your extensions right here
 const extensions = [
@@ -55,6 +56,7 @@ export function Editor({ onMount }: EditorProps) {
         <EditorBubbleMenu />
         <LinkBubbleMenu />
         <EditorHTML />
+        <ImageUploadDialog />
       </EditorProvider>
     </>
   );
