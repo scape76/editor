@@ -18,7 +18,6 @@ export function ImageUploadDialog() {
   const { editor } = useCurrentEditor();
 
   const [open, setOpen] = useState(false);
-  const [files, setFiles] = useState<File[]>([]);
 
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
@@ -44,6 +43,7 @@ export function ImageUploadDialog() {
       if (file?.type.startsWith("image/")) {
         const url = URL.createObjectURL(file);
         editor.chain().setImage({ src: url }).focus().run();
+        setOpen(false);
       }
     },
     [editor]

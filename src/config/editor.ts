@@ -10,5 +10,6 @@ export const editorConfig = {
     italic: "Mod-i",
     bold: "Mod-b",
     bulletList: "Mod-shift-b",
+    image: "Mod-shift-i",
   },
 };

@@ -117,19 +117,19 @@ export function ResizableImage({
   return (
     <NodeViewWrapper
       ref={wrapperRef}
-      className="group relative"
+      className={"group relative borde"}
       style={{ textAlign }}
     >
       {!isEditable ? (
         <img className="inline-block" src={src} alt="" style={{ width }} />
       ) : (
-        <div className="relative inline-block" contentEditable={false}>
+        <div className="relative inline-block " contentEditable={false}>
           <div
             onMouseDown={handleMouseDown("left")}
             className="absolute z-40 h-full cursor-col-resize top-0 flex w-6 select-none flex-col justify-center after:flex after:h-12 after:w-[3px] after:rounded-[6px] after:bg-blue-500 after:opacity-0 after:content-['_'] group-hover:after:opacity-100 -left-2.5 -ml-3 pl-3"
           ></div>
           <img
-            className="inline-block"
+            className={"inline-block border-2"}
             src={src}
             alt=""
             style={{ width }}

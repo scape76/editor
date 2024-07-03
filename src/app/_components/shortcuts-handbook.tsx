@@ -66,6 +66,10 @@ export function ShortcutsHandbook() {
             </Shortcut>{" "}
             to apply bullet list node
           </div>
+          <div>
+            <Shortcut>{shortcutToKbd(editorConfig.shortcuts.image)}</Shortcut>{" "}
+            to upload an image
+          </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
