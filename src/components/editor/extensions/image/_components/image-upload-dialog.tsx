@@ -1,17 +1,14 @@
 // taken from https://github.com/sadmann7/file-uploader
 
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useCallback, useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { FileUploader } from "@/components/file-uploader";
-import { Icons } from "@/components/icons";
 import { useCurrentEditor } from "@/context/editor-context";
 
 export function ImageUploadDialog() {
@@ -23,7 +20,7 @@ export function ImageUploadDialog() {
     const listener = (e: KeyboardEvent) => {
       if (
         (e.key === "i" || e.key === "I") &&
-        e.shiftKey &&
+        e.altKey &&
         (e.metaKey || e.ctrlKey)
       ) {
         setOpen((prev) => !prev);
@@ -51,11 +48,11 @@ export function ImageUploadDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
+      {/* <DialogTrigger asChild>
         <Button variant="ghost" size={"xs"}>
           <Icons.image className="size-4" />
         </Button>
-      </DialogTrigger>
+      </DialogTrigger> */}
       <DialogContent className="sm:max-w-xl">
         <DialogHeader>
           <DialogTitle>Upload files</DialogTitle>

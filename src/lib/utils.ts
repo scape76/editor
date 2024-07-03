@@ -11,6 +11,7 @@ export function shortcutToKbd(shortcut: string) {
   return shortcut
     .replaceAll("Mod", "⌘")
     .replaceAll("shift", "⇧")
+    .replaceAll("alt", "⌥")
     .replaceAll("-", " + ")
     .toUpperCase();
 }

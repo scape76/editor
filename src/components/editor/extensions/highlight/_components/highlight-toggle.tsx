@@ -62,11 +62,6 @@ export function HighlightToggle() {
 
 const ColorPicker = memo(
   ({ color, onChange }: { color: string; onChange: (c: string) => void }) => {
-    return (
-      <HexColorPicker
-        color={color}
-        onChange={debounce(onChange, 200)}
-      ></HexColorPicker>
-    );
+    return <HexColorPicker color={color} onChange={debounce(onChange, 200)} />;
   }
 );
