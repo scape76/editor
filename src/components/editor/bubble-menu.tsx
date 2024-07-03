@@ -29,6 +29,7 @@ export function EditorBubbleMenu({
 
   return (
     <BubbleMenu
+      pluginKey={"my-bubble-menu"}
       editor={editor}
       {...props}
       className={cn(

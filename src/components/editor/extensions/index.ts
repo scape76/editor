@@ -7,3 +7,4 @@ export * from "./link";
 export * from "./paragraph";
 export * from "./strike";
 export * from "./image";
+export * from "./bubble-menu";
