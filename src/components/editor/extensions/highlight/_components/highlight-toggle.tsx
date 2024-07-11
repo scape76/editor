@@ -65,3 +65,5 @@ const ColorPicker = memo(
     return <HexColorPicker color={color} onChange={debounce(onChange, 200)} />;
   }
 );
+
+ColorPicker.displayName = "ColorPicker";
