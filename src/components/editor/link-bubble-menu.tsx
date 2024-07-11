@@ -11,13 +11,11 @@ export function LinkBubbleMenu() {
 
   const [showEdit, setShowEdit] = useState(false);
 
-  if (!editor) return null;
-
   return (
     <BubbleMenu
       shouldShow={({ editor }) => editor.isActive("link")}
       editor={editor}
-      tippyOptions={{ placement: "bottom-start" }}
+      tippyOptions={{ placement: "bottom-start", maxWidth: "auto" }}
       className={cn(popoverVariants({ variant: "toolbar" }), "px-2")}
     >
       {showEdit ? (

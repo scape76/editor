@@ -56,8 +56,6 @@ export function SetLinkPopover({}: SetLinkPopoverProps) {
     form.reset({ text: selectedText });
   }, [editor?.state.selection]);
 
-  if (!editor) return null;
-
   const onSubmit = ({ text, href }: LinkSchemaInputs) => {
     editor
       .chain()
