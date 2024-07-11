@@ -1,0 +1,202 @@
+[
+  {
+    "label": "😀",
+    "value": "grinning"
+  },
+  {
+    "label": "😃",
+    "value": "smiley"
+  },
+  {
+    "label": "😄",
+    "value": "smile"
+  },
+  {
+    "label": "😁",
+    "value": "grin"
+  },
+  {
+    "label": "😆",
+    "value": "laughing"
+  },
+  {
+    "label": "😅",
+    "value": "sweat_smile"
+  },
+  {
+    "label": "😂",
+    "value": "joy"
+  },
+  {
+    "label": "🤣",
+    "value": "rofl"
+  },
+  {
+    "label": "😊",
+    "value": "blush"
+  },
+  {
+    "label": "😇",
+    "value": "innocent"
+  },
+  {
+    "label": "🙂",
+    "value": "slightly_smiling_face"
+  },
+  {
+    "label": "🙃",
+    "value": "upside_down_face"
+  },
+  {
+    "label": "😉",
+    "value": "wink"
+  },
+  {
+    "label": "😌",
+    "value": "relieved"
+  },
+  {
+    "label": "😍",
+    "value": "heart_eyes"
+  },
+  {
+    "label": "🥰",
+    "value": "smiling_face_with_3_hearts"
+  },
+  {
+    "label": "😘",
+    "value": "kissing_heart"
+  },
+  {
+    "label": "😗",
+    "value": "kissing"
+  },
+  {
+    "label": "😙",
+    "value": "kissing_smiling_eyes"
+  },
+  {
+    "label": "😚",
+    "value": "kissing_closed_eyes"
+  },
+  {
+    "label": "😋",
+    "value": "yum"
+  },
+  {
+    "label": "😜",
+    "value": "stuck_out_tongue_winking_eye"
+  },
+  {
+    "label": "😝",
+    "value": "stuck_out_tongue_closed_eyes"
+  },
+  {
+    "label": "😛",
+    "value": "stuck_out_tongue"
+  },
+  {
+    "label": "🤑",
+    "value": "money_mouth_face"
+  },
+  {
+    "label": "🤗",
+    "value": "hugs"
+  },
+  {
+    "label": "🤭",
+    "value": "hand_over_mouth"
+  },
+  {
+    "label": "🤫",
+    "value": "shushing_face"
+  },
+  {
+    "label": "🤔",
+    "value": "thinking"
+  },
+  {
+    "label": "🤐",
+    "value": "zipper_mouth_face"
+  },
+  {
+    "label": "🤨",
+    "value": "raised_eyebrow"
+  },
+  {
+    "label": "😐",
+    "value": "neutral_face"
+  },
+  {
+    "label": "😑",
+    "value": "expressionless"
+  },
+  {
+    "label": "😶",
+    "value": "no_mouth"
+  },
+  {
+    "label": "😏",
+    "value": "smirk"
+  },
+  {
+    "label": "😒",
+    "value": "unamused"
+  },
+  {
+    "label": "🙄",
+    "value": "roll_eyes"
+  },
+  {
+    "label": "😬",
+    "value": "grimacing"
+  },
+  {
+    "label": "🤥",
+    "value": "lying_face"
+  },
+  {
+    "label": "😌",
+    "value": "relieved"
+  },
+  {
+    "label": "😔",
+    "value": "pensive"
+  },
+  {
+    "label": "😪",
+    "value": "sleepy"
+  },
+  {
+    "label": "🤤",
+    "value": "drooling_face"
+  },
+  {
+    "label": "😴",
+    "value": "sleeping"
+  },
+  {
+    "label": "😷",
+    "value": "mask"
+  },
+  {
+    "label": "🤒",
+    "value": "face_with_thermometer"
+  },
+  {
+    "label": "🤕",
+    "value": "face_with_head_bandage"
+  },
+  {
+    "label": "🤢",
+    "value": "nauseated_face"
+  },
+  {
+    "label": "🤮",
+    "value": "vomiting_face"
+  },
+  {
+    "label": "🤧",
+    "value": "sneezing_face"
+  }
+]

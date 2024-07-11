@@ -3,7 +3,7 @@ import {
   LinkOptions as TiptapLinkOptions,
   Link as TTLink,
 } from "@tiptap/extension-link";
-import { Plugin, TextSelection } from "@tiptap/pm/state";
+import { Plugin, TextSelection, Selection } from "@tiptap/pm/state";
 import { EditorView } from "@tiptap/pm/view";
 import { GeneralOptions } from "@/types";
 

@@ -26,6 +26,7 @@ import {
 import { EditorHTML } from "./editor-html";
 import { EditorFloatingMenu } from "./floating-menu";
 import { ImageUploadDialog } from "./extensions/image/_components/image-upload-dialog";
+import { AutocompleteBubbleMenu } from "./extensions/autocomplete/_components/autocomplete-bubble-menu";
 
 // define your extensions right here
 const extensions = [
@@ -61,6 +62,7 @@ export function Editor({ onMount }: EditorProps) {
         <LinkBubbleMenu />
         <EditorHTML />
         <ImageUploadDialog />
+        <AutocompleteBubbleMenu />
       </EditorProvider>
     </>
   );
