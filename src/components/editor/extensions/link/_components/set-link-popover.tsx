@@ -20,9 +20,17 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useForm } from "react-hook-form";
 import { LinkSchemaInputs, linkSchema } from "@/lib/validations/link";
 import { valibotResolver } from "@hookform/resolvers/valibot";
+import { withTooltip } from "@/components/ui/tooltip";
+import { ToolbarButton } from "@/components/editor/_components/toolbar-button";
 
 interface SetLinkPopoverProps {}
 

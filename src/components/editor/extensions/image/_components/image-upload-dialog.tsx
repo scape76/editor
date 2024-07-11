@@ -7,9 +7,12 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { FileUploader } from "@/components/file-uploader";
 import { useCurrentEditor } from "@/context/editor-context";
+import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export function ImageUploadDialog() {
   const { editor } = useCurrentEditor();
@@ -48,16 +51,16 @@ export function ImageUploadDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      {/* <DialogTrigger asChild>
+      <DialogTrigger asChild>
         <Button variant="ghost" size={"xs"}>
           <Icons.image className="size-4" />
         </Button>
-      </DialogTrigger> */}
+      </DialogTrigger>
       <DialogContent className="sm:max-w-xl">
         <DialogHeader>
-          <DialogTitle>Upload files</DialogTitle>
+          <DialogTitle>Upload file</DialogTitle>
           <DialogDescription>
-            Drag and drop your files here or click to browse.
+            Drag and drop your file here or click to browse.
           </DialogDescription>
         </DialogHeader>
         <FileUploader

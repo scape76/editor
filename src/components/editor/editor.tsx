@@ -24,9 +24,9 @@ import {
   BubbleMenu,
 } from "./extensions";
 import { EditorHTML } from "./editor-html";
-import { EditorFloatingMenu } from "./floating-menu";
-import { ImageUploadDialog } from "./extensions/image/_components/image-upload-dialog";
 import { AutocompleteBubbleMenu } from "./extensions/autocomplete/_components/autocomplete-bubble-menu";
+import { Autocomplete } from "./extensions/autocomplete";
+import { EditorToolbar } from "./editor-toolbar";
 
 // define your extensions right here
 const extensions = [
@@ -41,9 +41,10 @@ const extensions = [
   BulletList,
   Image,
   BubbleMenu,
+  Autocomplete,
 ];
 
-const content = `<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://scape76.com"><strong>Hello World!</strong></a></p><p><mark data-color="#a29797" style="background-color: #a29797; color: inherit">highlighting is fun!</mark></p><p><strong>some old bold style</strong></p><p><s>strikethough</s></p>`;
+const content = `<p></p><p>Look 😃 at these emojis 💛</p><p>you can start typing <code>:</code> for an autocomplete.</p><p></p><p>You can checkout <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/scape76/editor">github </a>repo to see the implementation</p><p></p><img src="https://scape76.com/thorfinn.webp" width="162">`;
 
 export interface EditorProps {
   onMount: () => void;
@@ -55,23 +56,31 @@ export function Editor({ onMount }: EditorProps) {
   }, []);
 
   return (
-    <>
+    <div className="relative">
       <EditorProvider content={content} extensions={extensions}>
+        <EditorToolbar />
         <EditorContent />
-        <EditorBubbleMenu />
+        {/* <EditorBubbleMenu /> */}
         <LinkBubbleMenu />
-        <EditorHTML />
-        <ImageUploadDialog />
+        {process.env.NODE_ENV === "development" && <EditorHTML />}
         <AutocompleteBubbleMenu />
       </EditorProvider>
-    </>
+    </div>
   );
 }
 
 export const EditorSkeleton = () => {
   return (
-    <div className={cn(textareaVariants(), "cursor-not-allowed opacity-50")}>
-      <Skeleton className="h-5 w-64" />
+    <div
+      className={cn(
+        textareaVariants(),
+        "cursor-not-allowed opacity-50 flex flex-col gap-2"
+      )}
+    >
+      <Skeleton className="h-6 w-[265px]" />
+      <Skeleton className="h-6 w-[320px]" />
+      <Skeleton className="h-6 w-64" />
+      <Skeleton className="h-6 w-full" />
     </div>
   );
 };

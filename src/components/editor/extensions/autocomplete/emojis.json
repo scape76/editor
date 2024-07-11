@@ -1,0 +1,558 @@
+[
+  {
+    "label": "😀",
+    "value": "grinning"
+  },
+  {
+    "label": "😃",
+    "value": "smiley"
+  },
+  {
+    "label": "😄",
+    "value": "smile"
+  },
+  {
+    "label": "😁",
+    "value": "grin"
+  },
+  {
+    "label": "😆",
+    "value": "laughing"
+  },
+  {
+    "label": "😅",
+    "value": "sweat_smile"
+  },
+  {
+    "label": "😂",
+    "value": "joy"
+  },
+  {
+    "label": "🤣",
+    "value": "rofl"
+  },
+  {
+    "label": "😊",
+    "value": "blush"
+  },
+  {
+    "label": "😇",
+    "value": "innocent"
+  },
+  {
+    "label": "🙂",
+    "value": "slightly_smiling_face"
+  },
+  {
+    "label": "🙃",
+    "value": "upside_down_face"
+  },
+  {
+    "label": "😉",
+    "value": "wink"
+  },
+  {
+    "label": "😌",
+    "value": "relieved"
+  },
+  {
+    "label": "😍",
+    "value": "heart_eyes"
+  },
+  {
+    "label": "🥰",
+    "value": "smiling_face_with_3_hearts"
+  },
+  {
+    "label": "😘",
+    "value": "kissing_heart"
+  },
+  {
+    "label": "😗",
+    "value": "kissing"
+  },
+  {
+    "label": "😙",
+    "value": "kissing_smiling_eyes"
+  },
+  {
+    "label": "😚",
+    "value": "kissing_closed_eyes"
+  },
+  {
+    "label": "😋",
+    "value": "yum"
+  },
+  {
+    "label": "😜",
+    "value": "stuck_out_tongue_winking_eye"
+  },
+  {
+    "label": "😝",
+    "value": "stuck_out_tongue_closed_eyes"
+  },
+  {
+    "label": "😛",
+    "value": "stuck_out_tongue"
+  },
+  {
+    "label": "🤑",
+    "value": "money_mouth_face"
+  },
+  {
+    "label": "🤗",
+    "value": "hugs"
+  },
+  {
+    "label": "🤭",
+    "value": "hand_over_mouth"
+  },
+  {
+    "label": "🤫",
+    "value": "shushing_face"
+  },
+  {
+    "label": "🤔",
+    "value": "thinking"
+  },
+  {
+    "label": "🤐",
+    "value": "zipper_mouth_face"
+  },
+  {
+    "label": "🤨",
+    "value": "raised_eyebrow"
+  },
+  {
+    "label": "😐",
+    "value": "neutral_face"
+  },
+  {
+    "label": "😑",
+    "value": "expressionless"
+  },
+  {
+    "label": "😶",
+    "value": "no_mouth"
+  },
+  {
+    "label": "😏",
+    "value": "smirk"
+  },
+  {
+    "label": "😒",
+    "value": "unamused"
+  },
+  {
+    "label": "🙄",
+    "value": "roll_eyes"
+  },
+  {
+    "label": "😬",
+    "value": "grimacing"
+  },
+  {
+    "label": "🤥",
+    "value": "lying_face"
+  },
+  {
+    "label": "😌",
+    "value": "relieved"
+  },
+  {
+    "label": "😔",
+    "value": "pensive"
+  },
+  {
+    "label": "😪",
+    "value": "sleepy"
+  },
+  {
+    "label": "🤤",
+    "value": "drooling_face"
+  },
+  {
+    "label": "😴",
+    "value": "sleeping"
+  },
+  {
+    "label": "😷",
+    "value": "mask"
+  },
+  {
+    "label": "🤒",
+    "value": "face_with_thermometer"
+  },
+  {
+    "label": "🤕",
+    "value": "face_with_head_bandage"
+  },
+  {
+    "label": "🤢",
+    "value": "nauseated_face"
+  },
+  {
+    "label": "🤮",
+    "value": "vomiting_face"
+  },
+  {
+    "label": "🤧",
+    "value": "sneezing_face"
+  },
+  {
+    "label": "😵",
+    "value": "dizzy_face"
+  },
+  {
+    "label": "🤯",
+    "value": "exploding_head"
+  },
+  {
+    "label": "😲",
+    "value": "astonished"
+  },
+  {
+    "label": "😳",
+    "value": "flushed"
+  },
+  {
+    "label": "🥺",
+    "value": "pleading_face"
+  },
+  {
+    "label": "😦",
+    "value": "frowning"
+  },
+  {
+    "label": "😧",
+    "value": "anguished"
+  },
+  {
+    "label": "😨",
+    "value": "fearful"
+  },
+  {
+    "label": "😰",
+    "value": "cold_sweat"
+  },
+  {
+    "label": "😥",
+    "value": "disappointed_relieved"
+  },
+  {
+    "label": "😢",
+    "value": "cry"
+  },
+  {
+    "label": "😭",
+    "value": "sob"
+  },
+  {
+    "label": "😱",
+    "value": "scream"
+  },
+  {
+    "label": "😖",
+    "value": "confounded"
+  },
+  {
+    "label": "😣",
+    "value": "persevere"
+  },
+  {
+    "label": "😞",
+    "value": "disappointed"
+  },
+  {
+    "label": "😓",
+    "value": "sweat"
+  },
+  {
+    "label": "😩",
+    "value": "weary"
+  },
+  {
+    "label": "😫",
+    "value": "tired_face"
+  },
+  {
+    "label": "🥱",
+    "value": "yawning_face"
+  },
+  {
+    "label": "😤",
+    "value": "triumph"
+  },
+  {
+    "label": "😡",
+    "value": "rage"
+  },
+  {
+    "label": "😠",
+    "value": "angry"
+  },
+  {
+    "label": "🤬",
+    "value": "cursing"
+  },
+  {
+    "label": "😈",
+    "value": "smiling_imp"
+  },
+  {
+    "label": "👿",
+    "value": "imp"
+  },
+  {
+    "label": "💀",
+    "value": "skull"
+  },
+  {
+    "label": "☠️",
+    "value": "skull_and_crossbones"
+  },
+  {
+    "label": "💩",
+    "value": "poop"
+  },
+  {
+    "label": "🤡",
+    "value": "clown"
+  },
+  {
+    "label": "👹",
+    "value": "ogre"
+  },
+  {
+    "label": "👺",
+    "value": "goblin"
+  },
+  {
+    "label": "👻",
+    "value": "ghost"
+  },
+  {
+    "label": "👽",
+    "value": "alien"
+  },
+  {
+    "label": "👾",
+    "value": "space_invader"
+  },
+  {
+    "label": "🤖",
+    "value": "robot"
+  },
+  {
+    "label": "😺",
+    "value": "smiley_cat"
+  },
+  {
+    "label": "😸",
+    "value": "smile_cat"
+  },
+  {
+    "label": "😹",
+    "value": "joy_cat"
+  },
+  {
+    "label": "😻",
+    "value": "heart_eyes_cat"
+  },
+  {
+    "label": "😼",
+    "value": "smirk_cat"
+  },
+  {
+    "label": "😽",
+    "value": "kissing_cat"
+  },
+  {
+    "label": "🙀",
+    "value": "scream_cat"
+  },
+  {
+    "label": "😿",
+    "value": "crying_cat_face"
+  },
+  {
+    "label": "😾",
+    "value": "pouting_cat"
+  },
+  {
+    "label": "🙈",
+    "value": "see_no_evil"
+  },
+  {
+    "label": "🙉",
+    "value": "hear_no_evil"
+  },
+  {
+    "label": "🙊",
+    "value": "speak_no_evil"
+  },
+  {
+    "label": "💋",
+    "value": "kiss"
+  },
+  {
+    "label": "💌",
+    "value": "love_letter"
+  },
+  {
+    "label": "💘",
+    "value": "cupid"
+  },
+  {
+    "label": "💝",
+    "value": "gift_heart"
+  },
+  {
+    "label": "💖",
+    "value": "sparkling_heart"
+  },
+  {
+    "label": "💗",
+    "value": "heartpulse"
+  },
+  {
+    "label": "💓",
+    "value": "heartbeat"
+  },
+  {
+    "label": "💞",
+    "value": "revolving_hearts"
+  },
+  {
+    "label": "💕",
+    "value": "two_hearts"
+  },
+  {
+    "label": "💟",
+    "value": "heart_decoration"
+  },
+  {
+    "label": "❣️",
+    "value": "heavy_heart_exclamation"
+  },
+  {
+    "label": "💔",
+    "value": "broken_heart"
+  },
+  {
+    "label": "❤️‍🔥",
+    "value": "heart_on_fire"
+  },
+  {
+    "label": "❤️‍🩹",
+    "value": "mending_heart"
+  },
+  {
+    "label": "❤️",
+    "value": "heart"
+  },
+  {
+    "label": "🧡",
+    "value": "orange_heart"
+  },
+  {
+    "label": "💛",
+    "value": "yellow_heart"
+  },
+  {
+    "label": "💚",
+    "value": "green_heart"
+  },
+  {
+    "label": "💙",
+    "value": "blue_heart"
+  },
+  {
+    "label": "💜",
+    "value": "purple_heart"
+  },
+  {
+    "label": "🤎",
+    "value": "brown_heart"
+  },
+  {
+    "label": "🖤",
+    "value": "black_heart"
+  },
+  {
+    "label": "🤍",
+    "value": "white_heart"
+  },
+  {
+    "label": "💯",
+    "value": "hundred"
+  },
+  {
+    "label": "💢",
+    "value": "anger"
+  },
+  {
+    "label": "💥",
+    "value": "boom"
+  },
+  {
+    "label": "💫",
+    "value": "dizzy"
+  },
+  {
+    "label": "💦",
+    "value": "sweat_drops"
+  },
+  {
+    "label": "💨",
+    "value": "dash"
+  },
+  {
+    "label": "🕳️",
+    "value": "hole"
+  },
+  {
+    "label": "💣",
+    "value": "bomb"
+  },
+  {
+    "label": "💬",
+    "value": "speech_balloon"
+  },
+  {
+    "label": "👁️‍🗨️",
+    "value": "eye_in_speech_bubble"
+  },
+  {
+    "label": "🗨️",
+    "value": "left_speech_bubble"
+  },
+  {
+    "label": "🗯️",
+    "value": "right_anger_bubble"
+  },
+  {
+    "label": "💭",
+    "value": "thought_balloon"
+  },
+  {
+    "label": "🗣️",
+    "value": "speaking_head"
+  },
+  {
+    "label": "👤",
+    "value": "bust_in_silhouette"
+  },
+  {
+    "label": "👥",
+    "value": "busts_in_silhouette"
+  },
+  {
+    "label": "👣",
+    "value": "footprints"
+  },
+  {
+    "label": "👁️",
+    "value": "eye"
+  }
+]

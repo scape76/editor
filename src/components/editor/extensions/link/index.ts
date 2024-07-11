@@ -11,19 +11,6 @@ export interface LinkOptions
   extends TiptapLinkOptions,
     GeneralOptions<LinkOptions> {}
 
-// export const Link = TTLink.extend<LinkOptions>({
-//   inclusive: false,
-//   addOptions() {
-//     return { ...this.parent?.(), openOnClick: true,
-//         button: ({editor, t}) => {
-//             return {
-//                 component: LinkEditPop
-//             }
-//         }
-//      };
-//   },
-// });
-
 export const Link = TTLink.extend({
   addProseMirrorPlugins() {
     return [

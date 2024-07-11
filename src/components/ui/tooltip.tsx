@@ -59,7 +59,6 @@ function withTooltip<
       return (
         <Tooltip {...tooltipProps}>
           <TooltipTrigger asChild>{component}</TooltipTrigger>
-
           <TooltipPrimitive.Portal>
             <TooltipContent {...tooltipContentProps}>{tooltip}</TooltipContent>
           </TooltipPrimitive.Portal>

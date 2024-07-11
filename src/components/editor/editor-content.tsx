@@ -9,10 +9,14 @@ export function EditorContent() {
   return (
     <TTEditorContent
       editor={editor}
-      className={cn(textareaVariants(), "outline-none", {
-        "outline-none ring-1 ring-ring": editor?.isFocused,
-        "cursor-not-allowed opacity-50": !editor?.isEditable,
-      })}
-    ></TTEditorContent>
+      className={cn(
+        textareaVariants(),
+        "outline-none relative rounded-b-md rounded-t-none border-t-0",
+        {
+          "outline-none": editor?.isFocused,
+          "cursor-not-allowed opacity-50": !editor?.isEditable,
+        }
+      )}
+    />
   );
 }

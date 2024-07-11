@@ -1,10 +1,10 @@
-import { cn } from "@/lib/utils";
 import * as React from "react";
-import { AutocompleteItem } from "..";
+import { cn } from "@/lib/utils";
+import { AutocompleteItem } from "../types";
 
 interface AutocompleteListProps {
   items: AutocompleteItem[];
-  onSelect: (item: AutocompleteItem) => void;
+  onSelect: (item: AutocompleteItem | null) => void;
 }
 
 export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
@@ -35,18 +35,23 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
   };
 
   React.useEffect(() => {
+    setActive((prev) => {
+      if (prev >= items.length) {
+        return 0;
+      }
+
+      return prev;
+    });
+  }, [items]);
+
+  React.useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       switch (e.key) {
-        case "n":
-        case "j":
         case "ArrowDown": {
           next(e);
           break;
         }
-        case "p":
-        case "k":
         case "ArrowUp": {
-          console.log("in here!");
           prev(e);
           break;
         }
@@ -61,15 +66,13 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
           break;
         }
         case "Enter": {
-          e.stopPropagation();
-          onSelect(items[active]);
+          e.preventDefault();
+          onSelect(items.length ? items[active] : null);
           break;
         }
       }
-      // e.preventDefault();
-      // e.stopPropagation();
     };
-    if (items.length) window.addEventListener("keydown", listener);
+    window.addEventListener("keydown", listener);
 
     return () => {
       window.removeEventListener("keydown", listener);
@@ -79,17 +82,24 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
   if (!items.length) return null;
 
   return (
-    <div className="h-full w-full overflow-hidden rounded-md bg-popover text-popover-foreground rounded-md">
+    <div className="h-full w-full overflow-hidden bg-popover text-popover-foreground rounded-md">
       <ul className="overflow-hidden p-1 text-foreground flex flex-col gap-1">
         {items.map((item, i) => (
-          <span
+          <li
+            role="button"
             key={item.value}
-            className={cn("text-xs text-muted-foreground p-1 rounded-md", {
-              "bg-accent": active == i,
-            })}
+            className={cn(
+              "text-xs text-muted-foreground p-1 rounded-md hover:bg-accent w-full text-start",
+              {
+                "bg-accent": active == i,
+              }
+            )}
+            onClick={() => {
+              onSelect(item);
+            }}
           >
             {item.label} :{item.value}:
-          </span>
+          </li>
         ))}
       </ul>
     </div>

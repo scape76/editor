@@ -53,6 +53,12 @@ export const nodesMenuItems = {
       editor.chain().focus().toggleBulletList().run(),
     isActive: (editor: Editor) => editor.isActive("bulletList"),
   },
+  code: {
+    title: "Code",
+    icon: Icons.code,
+    onClick: (editor: Editor) => editor.chain().focus().toggleCode().run(),
+    isActive: (editor: Editor) => editor.isActive("code"),
+  },
 };
 
 const nodeItems = Object.values(nodesMenuItems);

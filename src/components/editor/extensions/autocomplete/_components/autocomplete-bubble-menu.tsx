@@ -1,14 +1,22 @@
-import { useCurrentEditor } from "@/context/editor-context";
-import { BubbleMenu } from "@tiptap/react";
-import emojis from "./emojis.json";
 import * as React from "react";
+import { BubbleMenu } from "@tiptap/react";
+import { useCurrentEditor } from "@/context/editor-context";
+import emojis from "../emojis.json";
 import { AutocompleteList } from "./autocomplete-list";
-import { AutocompleteItem } from "..";
-import { getInputBounds, shouldShowMenu } from "./helpers";
+import {
+  getInputBounds,
+  getResolvedInputBounds,
+  isAutocompleteActive,
+} from "./helpers";
+import { AutocompleteItem } from "../types";
 
 export function AutocompleteBubbleMenu() {
   const [input, setInput] = React.useState("");
   const [show, setShow] = React.useState(false);
+  const [currentBounds, setCurrentBounds] = React.useState<null | {
+    start: number;
+    end: number;
+  }>(null);
 
   const { editor } = useCurrentEditor();
 
@@ -19,14 +27,16 @@ export function AutocompleteBubbleMenu() {
     const nodeText = pos.parent.textContent;
     const offset = pos.parentOffset;
 
-    const shouldShow = shouldShowMenu(nodeText, offset);
+    const shouldShow = isAutocompleteActive(editor.view.state);
 
     if (shouldShow) {
-      const [start, end] = getInputBounds(nodeText, offset);
+      const { start, end } = getInputBounds(nodeText, offset);
       const input = nodeText.slice(start + 1, end);
+      setCurrentBounds(getResolvedInputBounds(nodeText, offset, pos.pos));
       setInput(input);
       setShow(true);
     } else {
+      setCurrentBounds(null);
       setShow(false);
     }
   }, [editor.view.state, editor.state.selection]);
@@ -41,32 +51,30 @@ export function AutocompleteBubbleMenu() {
   }, [input]);
 
   const onSelect = React.useCallback(
-    (item: AutocompleteItem) => {
-      const { doc } = editor.view.state;
-      const pos = doc.resolve(editor.state.selection.anchor);
+    (item: AutocompleteItem | null) => {
+      if (!currentBounds || !item) return;
+      const { tr } = editor.view.state;
+
+      const transaction = tr.insertText(
+        item.label,
+        currentBounds.start,
+        currentBounds.end
+      );
+
+      editor.view.dispatch(transaction);
     },
-    [editor.view.state]
+    [editor.view.state, editor.state.selection, currentBounds]
   );
 
   return (
     <BubbleMenu
       editor={editor}
       tippyOptions={{ placement: "bottom-start" }}
-      shouldShow={({ editor, view }) => {
-        const { schema, doc, tr } = view.state;
-        const pos = doc.resolve(editor.state.selection.anchor);
-
-        const shouldShow = shouldShowMenu(
-          pos.parent.textContent,
-          pos.parentOffset
-        );
-
-        console.log("show: ", shouldShow);
-
-        return shouldShow;
+      shouldShow={({ editor }) => {
+        return isAutocompleteActive(editor.view.state);
       }}
     >
-      <AutocompleteList items={filteredItems} onSelect={onSelect} />
+      {show && <AutocompleteList items={filteredItems} onSelect={onSelect} />}
     </BubbleMenu>
   );
 }

@@ -11,5 +11,6 @@ export const editorConfig = {
     bold: "Mod-b",
     bulletList: "Mod-shift-b",
     image: "Mod-alt-i",
+    code: "Mod-shift-c",
   },
 };
