@@ -1,6 +1,6 @@
 import { Extension } from "@tiptap/core";
 import { Plugin, PluginKey } from "@tiptap/pm/state";
-import { isAutocompleteActive } from "./_components/helpers";
+import { isAutocompleteActive } from "./helpers";
 
 export const Autocomplete = Extension.create({
   name: "autocomplete",

@@ -2,9 +2,8 @@
 
 import * as React from "react";
 
-import StarterKit from "@tiptap/starter-kit";
-import { EditorBubbleMenu } from "./bubble-menu";
 import "@/styles/editor.css";
+import StarterKit from "@tiptap/starter-kit";
 import { EditorContent } from "./editor-content";
 import { EditorProvider } from "@/context/editor-context";
 import { LinkBubbleMenu } from "./link-bubble-menu";

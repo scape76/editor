@@ -7,7 +7,7 @@ import {
   getInputBounds,
   getResolvedInputBounds,
   isAutocompleteActive,
-} from "./helpers";
+} from "../helpers";
 import { AutocompleteItem } from "../types";
 
 export function AutocompleteBubbleMenu() {
