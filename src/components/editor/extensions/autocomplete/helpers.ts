@@ -25,7 +25,7 @@ export function getInputBounds(parentText: string, parentOffset: number) {
     start--;
   }
 
-  while (parentText[end] != " " && end != parentText.length) {
+  while (parentText[end] != " " && end < parentText.length) {
     end++;
   }
 
@@ -48,7 +48,7 @@ export function getResolvedInputBounds(
     resStart--;
   }
 
-  while (parentText[end] != " " && end != parentText.length) {
+  while (parentText[end] != " " && end < parentText.length) {
     end++;
     resEnd++;
   }
