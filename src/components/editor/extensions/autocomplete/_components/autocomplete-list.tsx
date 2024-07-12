@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { AutocompleteItem } from "../types";
+import { motion } from "framer-motion";
 
 interface AutocompleteListProps {
   items: AutocompleteItem[];
@@ -82,17 +83,20 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
   if (!items.length) return null;
 
   return (
-    <div className="h-full w-full overflow-hidden bg-popover text-popover-foreground rounded-md">
+    <motion.div
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.15 }}
+      initial={{ opacity: 0 }}
+      className="h-full w-full overflow-hidden bg-popover text-popover-foreground rounded-md"
+    >
       <ul className="overflow-hidden p-1 text-foreground flex flex-col gap-1">
         {items.map((item, i) => (
           <li
             role="button"
             key={item.value}
             className={cn(
-              "text-xs text-muted-foreground p-1 rounded-md hover:bg-accent w-full text-start",
-              {
-                "bg-accent": active == i,
-              }
+              "text-xs text-muted-foreground p-1 rounded-md hover:bg-accent w-full text-start relative",
+              { "bg-accent": active === i }
             )}
             onClick={() => {
               onSelect(item);
@@ -102,6 +106,6 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }
