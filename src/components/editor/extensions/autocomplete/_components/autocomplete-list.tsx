@@ -95,14 +95,22 @@ export function AutocompleteList({ items, onSelect }: AutocompleteListProps) {
             role="button"
             key={item.value}
             className={cn(
-              "text-xs text-muted-foreground p-1 rounded-md hover:bg-accent w-full text-start relative",
-              { "bg-accent": active === i }
+              "relative text-xs text-muted-foreground p-1 rounded-md hover:bg-accent w-full text-start relative"
             )}
             onClick={() => {
               onSelect(item);
             }}
           >
-            {item.label} :{item.value}:
+            {active === i && (
+              <motion.div
+                layoutId="list"
+                className="backdrop-blur-sm bg-accent rounded-md absolute inset-0"
+                transition={{ type: "spring", duration: "0.6" }}
+              />
+            )}
+            <span className="z-[10] relative">
+              {item.label} :{item.value}:
+            </span>
           </li>
         ))}
       </ul>
